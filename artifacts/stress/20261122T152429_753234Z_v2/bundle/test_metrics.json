@@ -1,0 +1,20 @@
+{
+  "n_windows": 1050,
+  "accuracy": 0.8352380952380952,
+  "balanced_accuracy": 0.861902252771235,
+  "macro_f1": 0.8317586660726739,
+  "stress_precision": 0.698076923076923,
+  "stress_recall": 0.9577836411609498,
+  "roc_auc": 0.9064268272062728,
+  "average_precision": 0.8103037210448003,
+  "brier_score": 0.14089834624447203,
+  "evaluation_status": "exploratory_reuse_of_previous_test_subjects",
+  "subject_mean_macro_f1": 0.831829136167272,
+  "subject_mean_balanced_accuracy": 0.8609990412654072,
+  "threshold": 0.31000000000000005,
+  "test_subjects": [
+    15,
+    16,
+    17
+  ]
+}

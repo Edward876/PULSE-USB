@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+android-camera2/build/
+
+data/
+artifacts/
+AIH.pdf
+Real-Time_Smartphone_Camera_PPG.pptx
+file.ipynb

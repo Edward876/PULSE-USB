@@ -1,0 +1,86 @@
+:root {
+  --ink: #0a1c43;
+  --teal: #008e92;
+  --line: #d1dbe5;
+  --muted: #53637a;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: #fff; color: var(--ink); font: 16px/1.5 system-ui, -apple-system, sans-serif; }
+header { padding: 18px 3%; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+.brand { font-size: 25px; }
+.brand b { font-weight: 750; }
+.brand span { color: #63cbc6; padding: 0 12px; }
+.local { font-size: 14px; }
+.local::after { content: '●'; color: var(--teal); margin-left: 14px; }
+main { max-width: 1480px; padding: 22px 3% 12px; margin: auto; }
+h1 { font-size: clamp(32px, 4vw, 54px); line-height: 1.15; letter-spacing: -1.7px; margin: 0 0 8px; }
+p { margin: 0 0 18px; }
+.subtitle { font-size: 21px; }
+.controls { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin: 24px 0; }
+button, .source { font: 600 16px system-ui; border: 1px solid var(--ink); border-radius: 7px; padding: 13px 24px; background: white; color: var(--ink); }
+button { cursor: pointer; }
+button.primary { background: var(--teal); border-color: var(--teal); color: white; }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, a:focus-visible { outline: 3px solid #e59e22; outline-offset: 4px; }
+.source { border-color: var(--line); min-width: 180px; font-weight: 400; }
+.monitor { display: grid; grid-template-columns: minmax(0, 3fr) minmax(225px, 1fr); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.plot { padding: 20px 24px 12px; min-width: 0; }
+h2 { font-size: 22px; margin: 0; }
+.caption { font-size: 14px; margin: 0 0 12px; }
+.plot canvas { width: 100%; height: 310px; display: block; }
+.metrics { border-left: 1px solid var(--line); padding: 24px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+.bpm { font-size: 96px; line-height: 1.05; font-weight: 700; letter-spacing: -5px; }
+.units { font-size: 20px; }
+.qualitybox { padding: 16px 0; margin: 22px 0 14px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+#quality { font-size: 28px; color: var(--teal); }
+#quality[data-level="poor"] { color: #b14a35; }
+#quality[data-level="warming up"], #quality[data-level="waiting"], #quality[data-level="tracking"] { color: #92580c; }
+#score { font-size: 14px; color: var(--muted); margin-top: 3px; }
+#fps { font-size: 23px; }
+.diagnostics { color: var(--muted); font-size: 13px; line-height: 1.45; margin-top: 12px; }
+.status { min-height: 30px; color: var(--muted); font-size: 14px; margin: 12px 0; }
+.steps { display: flex; border: 1px solid var(--line); border-radius: 7px; padding: 20px 8px; list-style: none; margin: 12px 0 22px; counter-reset: step; }
+.steps li { flex: 1; text-align: center; border-right: 1px solid var(--line); }
+.steps li:last-child { border: 0; }
+.steps li::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--teal); border-radius: 50%; color: var(--teal); margin-right: 12px; }
+footer { font-size: 13px; color: var(--muted); }
+a { color: var(--teal); }
+.phone { max-width: 660px; }
+.phone video { display: block; width: 100%; max-height: 300px; background: #10243b; border-radius: 8px; margin: 16px 0; }
+.phone .controls { gap: 10px; }
+.notice { color: #92580c; font-weight: 600; }
+.stress-panel { border: 1px solid var(--line); border-radius: 8px; padding: 22px 24px; margin: 14px 0 20px; }
+.stress-heading { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+.experimental { color: #744b12; background: #fff5dd; padding: 4px 10px; border-radius: 5px; font-size: 13px; }
+.stress-layout { display: grid; grid-template-columns: minmax(180px, 1fr) 2fr; gap: 24px; }
+.stress-label { font-size: 30px; font-weight: 650; color: var(--teal); }
+.stress-state { font-weight: 600; margin: 4px 0 12px; }
+.stress-state[data-state="stale"], .stress-state[data-state="unavailable"] { color: #a3432b; }
+.stress-limit, #stress-history { font-size: 13px; color: var(--muted); margin: 12px 0 0; }
+#stress-progress { display: block; width: 100%; height: 16px; margin: 8px 0; accent-color: var(--teal); }
+#stress-progress-label { font-size: 14px; }
+
+@media (max-width: 700px) {
+  header { padding: 14px 5%; }
+  .brand { font-size: 18px; }
+  .local { font-size: 11px; }
+  main { padding: 24px 5%; }
+  .subtitle { font-size: 17px; }
+  .controls { gap: 10px; }
+  .source { min-width: 100px; }
+  button { padding: 12px 15px; }
+  .monitor { grid-template-columns: 1fr; }
+  .metrics { border-left: 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: center; }
+  .bpm { font-size: 64px; }
+  .units { font-size: 16px; }
+  .qualitybox { margin: 0; padding: 0; border: 0; }
+  .plot { padding: 16px; }
+  .plot canvas { height: 240px; }
+  .steps { display: block; }
+  .steps li { text-align: left; border: 0; padding: 6px 14px; }
+  #fps { font-size: 18px; grid-column: 1 / -1; }
+  .diagnostics { grid-column: 1 / -1; }
+  .stress-layout { grid-template-columns: 1fr; gap: 10px; }
+  .stress-panel { padding: 18px 16px; }
+}

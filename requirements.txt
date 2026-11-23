@@ -1,0 +1,8 @@
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+numpy>=1.26,<3
+scipy>=1.12,<2
+opencv-python-headless>=4.9,<5
+neurokit2==0.2.12
+# NeuroKit 0.2.12 uses pandas operations predating pandas 3 Copy-on-Write.
+pandas>=2.2.3,<3

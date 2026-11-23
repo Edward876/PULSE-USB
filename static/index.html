@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pulse / USB PPG lab</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/static/style.css?v=stress-rolling-2"></head><body>
+<header><div class="brand"><b>Pulse</b><span>/</span>USB PPG lab</div><div class="local">Local processing</div></header>
+<main><h1>Your pulse, in view.</h1><p class="subtitle">Live fingertip photoplethysmography</p>
+<div class="controls"><span>Source</span><span id="source" class="source">Connecting…</span><button id="start" class="primary" disabled>Start measurement</button><button id="stop" disabled>Stop</button><span id="demo" class="notice"></span></div>
+<section class="monitor"><div class="plot"><h2>Live PPG</h2><p class="caption">Last 12 seconds · normalized amplitude</p><canvas id="wave" role="img" aria-label="Live PPG waveform, normalized amplitude over the last 12 seconds"></canvas></div><aside class="metrics"><div><div id="bpm" class="bpm">—</div><div class="units">beats / min</div></div><div class="qualitybox">Signal quality<div id="quality">Connecting</div><div id="score">Score —</div></div><div id="fps">— fps</div><div id="diagnostics" class="diagnostics">Waiting for camera diagnostics</div></aside></section>
+<p class="status" id="status" role="status">Connecting to local server…</p>
+<section class="stress-panel" aria-labelledby="stress-title">
+<div class="stress-heading"><h2 id="stress-title">Stress pattern</h2><span class="experimental">Experimental · wrist-trained model</span></div>
+<div class="stress-layout"><div><div id="stress-label" class="stress-label">—</div><p id="stress-model-label" class="caption" hidden></p><p id="stress-score" class="caption">Class score —</p><p id="stress-state" class="stress-state" role="status">Connecting</p></div>
+<div><label for="stress-progress" id="stress-progress-label">Collecting 0 / 64 seconds</label><progress id="stress-progress" value="0" max="64"></progress><p id="stress-timing" class="caption">First estimate after 64 usable seconds; refreshes every 30 seconds.</p><p id="stress-reason" class="caption">Waiting for the local monitor</p></div></div>
+<p id="stress-prv" class="caption"></p><p id="stress-history" class="caption" hidden></p>
+<p class="stress-limit">The headline uses the score before rounding. The model output below it uses the decision threshold.</p>
+</section>
+<p class="caption">Processing: NeuroKit2 · Elgendi pulse detection</p>
+<p class="caption">BPM is a smoothed recent estimate. <a href="/api/signal-report" download="pulse-signal-report.json">Save signal report</a> while measuring to investigate unstable readings.</p>
+<ol class="steps"><li>Connect your phone</li><li>Cover the lit lens gently</li><li>BPM after warm-up · stress after 64 usable seconds</li></ol>
+<footer><p>For education only. Not a medical device. HRV and stress require longer, cleaner recordings and validation.</p><p id="phoneLink"><a href="/phone">Open phone capture page</a> · Source is chosen when starting the server. Raw video is processed in memory and is not saved.</p></footer></main><script src="/static/monitor.js?v=stress-labels-2"></script></body></html>

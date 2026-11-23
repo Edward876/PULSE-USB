@@ -1,0 +1,62 @@
+{
+  "seed": 343,
+  "pipeline_version": "wesad-msptd-inception-v2",
+  "target_fs": 30,
+  "window_seconds": 60,
+  "guard_seconds": 2,
+  "stride_seconds": 5,
+  "max_epochs": 150,
+  "min_attempted_epochs": 50,
+  "patience": 30,
+  "batch_size": 32,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.01,
+  "dropout": 0.4,
+  "label_smoothing": 0.02,
+  "development_folds": 4,
+  "development_subjects": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    14
+  ],
+  "test_subjects": [
+    15,
+    16,
+    17
+  ],
+  "prv_used_as_model_input": false,
+  "evaluation_status": "exploratory_reuse_of_previous_test_subjects",
+  "threshold": 0.31000000000000005,
+  "final_epochs": 14,
+  "input_shape": [
+    2,
+    1800
+  ],
+  "input_seconds_with_context": 64,
+  "architecture": "single six-block residual Inception + learned frequency branch",
+  "fitted_subjects": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    14
+  ],
+  "score_calibrated": false,
+  "phone_validation": "not established"
+}
